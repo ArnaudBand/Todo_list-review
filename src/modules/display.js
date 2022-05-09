@@ -109,7 +109,7 @@ const addLocalStorage = () => {
     event.preventDefault();
     const data = newTodo.value;
     if (event.key === 'Enter' && data) {
-      if (!lists) {
+      if (lists === false) {
         // eslint-disable-next-line no-const-assign
         lists = [];
       }

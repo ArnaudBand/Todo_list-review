@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Todo List app</title>
+       <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+        />
+        <script src="https://kit.fontawesome.com/2b1476549e.js" crossorigin="anonymous"></script>
+        <script defer="defer" src="./main.js"></script>
+    <script defer src="main.js"></script></head>
+    <body>
+        <div class="container_todo">
+            <div class="to_dolist">
+                <div class="title">
+                    <h2>Today's To Do</h2>
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="type-list">
+                      <input type="text" class="text" placeholder="Add to your list..." id="new-todo" required>
+                      <button class="add-button" type="submit"><i class="add-icon fa fa-share" id="add"></i></button>
+                </div>
+                <div class="list_section"></div>
+                <div id="clear-completed">
+                    <button type="button" id="clear">Clear all completed</button>
+                </div>
+              </div>
+        </div>
+    </body>
+</html>

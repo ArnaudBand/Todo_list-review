@@ -4,13 +4,13 @@ const checkInput = (inputList) => {
   inputList.forEach((item) => {
     item.addEventListener('click', () => {
       const tasks = JSON.parse(localStorage.getItem('Tasks'));
-      const parentItem = item.parentNode;
-      const grandParent = parentItem.parentNode;
-      const index = Array.prototype.indexOf.call(grandParent.children, parentItem);
+      const parent = item.parentNode;
+      const grandParent = parent.parentNode;
+      const index = Array.prototype.indexOf.call(grandParent.children, parent);
       const status = tasks[index].complete;
-      const line = parentItem.children.item(1);
-      const dot = parentItem.children.item(2);
-      const trash = parentItem.children.item(3);
+      const line = parent.children.item(1);
+      const dot = parent.children.item(2);
+      const trash = parent.children.item(3);
       if (status) {
         item.removeAttribute('checked');
         dot.style.display = 'block';
@@ -69,9 +69,9 @@ const clearAllComplete = () => {
 const updateDescription = () => {
   const labelCheck = document.querySelectorAll('.label_check');
   labelCheck.forEach((item) => {
-    const parentItem = item.parentNode;
-    const grandParent = parentItem.parentNode;
-    const index = Array.prototype.indexOf.call(grandParent.children, parentItem);
+    const parent = item.parentNode;
+    const grandParent = parent.parentNode;
+    const index = Array.prototype.indexOf.call(grandParent.children, parent);
     item.addEventListener('change', () => {
       lists[index].description = item.value;
       localStorage.setItem('Tasks', JSON.stringify(lists));
@@ -132,13 +132,13 @@ const updateLocalStorage = () => {
     const inputList = document.querySelectorAll('.input_checkBox');
     const tasks = JSON.parse(localStorage.getItem('Tasks'));
     inputList.forEach((item) => {
-      const parentItem = item.parentNode;
-      const grandParent = parentItem.parentNode;
-      const index = Array.prototype.indexOf.call(grandParent.children, parentItem);
+      const parent = item.parentNode;
+      const grandParent = parent.parentNode;
+      const index = Array.prototype.indexOf.call(grandParent.children, parent);
       const status = tasks[index].complete;
-      const line = parentItem.children.item(1);
-      const dot = parentItem.children.item(2);
-      const trash = parentItem.children.item(3);
+      const line = parent.children.item(1);
+      const dot = parent.children.item(2);
+      const trash = parent.children.item(3);
       if (status) {
         item.setAttribute('checked', '');
         dot.style.display = 'none';
